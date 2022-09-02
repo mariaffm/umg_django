@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!---->
+<style>
+    a{color:brown;
+        text-align: center; }
+    li{
+        text-align: center; 
+    }
+    h1{
+        text-align: center; 
+    }
+
+
+</style>
+
+
+
+<!---->
+
+</head>
+<body>
+    <body bgcolor="#EBF5FB"></body>
+    <div class ="container" style ="background-color:slategrey">
+        <h1 class="text-center" >LISTADO DE ADMINISTRADORES</h1>
+    </div>
+
+    <li>
+        <a href="{% url 'home:homeapp' %}">Home</a>
+        <a href="{% url 'home:studentsapp' %}"> Estudiantes</a> |
+        
+        <a href="">Administradores</a> |
+        <a href=""> Acerca de</a>   
+    </li>
+
+    <h3 class = "text-center"> LISTADO DE ADMINISTRADORES</h3>
+    <div class = "container">
+        <center>
+            <TABLE BORDER WIDTH="50%">
+                <tr>
+                    <th>Numero</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Carrera</th>
+                </tr>
+    
+                <tr>
+                    <th>1</th>
+                    <th>Maria</th>
+                    <th>Fuentes</th>
+                    <th>Psicologia</th>
+                </tr>
+    
+                <tr>
+                    <th>2</th>
+                    <th>Fernanda</th>
+                    <th>Monzon</th>
+                    <th>Ingenieria</th>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <th>Ana Martina</th>
+                    <th>Alvarado</th>
+                    <th>Quimica Biologa</th>
+                </tr>
+            </table>
+
+
+        </center>
+
+        
+    </div>
+
+</body>
+</html>
