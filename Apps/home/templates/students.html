@@ -1,91 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+{% extends 'base.html' %}
+{% load static %}   
+{% block contenido %}
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="index.html">Start Bootstrap</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase"  href="{% url 'home:homeapp' %}">Home</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href={% url 'home:studentsapp' %}>ESTUDIANTES</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href={% url 'home:administratorapp' %}>ADMINISTRADORES</a></li>
+                        
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="#">SOBRE NOSOTROS</a></li>
 
 
-    <style>
-        a{color:brown;
-            text-align: center; }
-        li{
-            text-align: center; 
-        }
-        h1{
-            text-align: center; 
-        }
-        .container{
-            text-align: center; 
-        }
-    
-    
-    </style>
-
-
-</head>
-<body>
-    
-
-    <body>
-        <div class ="container" style ="background-color:slategrey">
-            <h1 class = "text-center">LISTADO DE ESTUDIANTES</h1>
-       
-        </div>
-       
-        <li calss = "text-align">  
-            <a href="{% url 'home:homeapp' %}">Home</a> |
-            <a href="">Estudiantes</a> |
-            <a href="{% url 'home:administratorapp' %}"> Administradores</a> |
-            <a href=""> Acerca de</a>   
-        </li>
-            
-        <div class ="container">
-        <center>
-            <TABLE BORDER WIDTH="50%">
-                <tr>
-                    <th>Numero</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Direccion</th>
-                </tr>
-                <tr class="table-primary" >
-                    <td>1</td>
-                    <td>Fernanda</td>
-                    <td>Fuentes</td>
-                    <td>Guatemala</td>
-                </tr>
-                <tr >
-                    <td>2</td>
-                    <td>Angelina</td>
-                    <td>Borbon</td>
-                    <td>España</td>
-                </tr>
-                <tr class = "table-success">
-                    <td>3</td>
-                    <td>Marcos</td>
-                    <td>Miranda</td>
-                    <td>Mexico</td>
-                </tr>
-        
-                <tr class=" fila" >
-                    <td class="fila1">4</td>
-                    <td class="fila2" >David</td>
-                    <td>Juarez</td>
-                    <td>Chile</td>
-                </tr>
-        
-            </table>
-        </center>
-            
-    
-            <div class= "botones" >
-                <button class="btnAgregar" class = "Agregar">AGREGAR</button>
-                <button class=" btnListar">LISTAR</button>
+                    </ul>
+                </div>
             </div>
-        </div>
-
-
-</body>
-</html>
+        </nav>
+        
+        <section class="page-section cta">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-9 mx-auto">
+                        <div class="cta-inner bg-faded text-center rounded">
+                            
+                                <span class="section-heading-upper">LISTADO DE ESTUDIATES</span>
+                               
+                                
+                                    <center>
+                                        <TABLE BORDER WIDTH="50%">
+                                            <tr>
+                                                <th>Numero</th>
+                                                <th>Nombre</th>
+                                                <th>Apellido</th>
+                                                <th>Direccion</th>
+                                            </tr>
+                                            <tr class="table-primary" >
+                                                <td>1</td>
+                                                <td>Fernanda</td>
+                                                <td>Fuentes</td>
+                                                <td>Guatemala</td>
+                                            </tr>
+                                            <tr >
+                                                <td>2</td>
+                                                <td>Angelina</td>
+                                                <td>Borbon</td>
+                                                <td>España</td>
+                                            </tr>
+                                            <tr class = "table-success">
+                                                <td>3</td>
+                                                <td>Marcos</td>
+                                                <td>Miranda</td>
+                                                <td>Mexico</td>
+                                            </tr>
+                                    
+                                            <tr class=" fila" >
+                                                <td class="fila1">4</td>
+                                                <td class="fila2" >David</td>
+                                                <td>Juarez</td>
+                                                <td>Chile</td>
+                                            </tr>
+                                    
+                                        </table>
+                                    </center>                                  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>    
+{% endblock %}

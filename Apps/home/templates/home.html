@@ -1,46 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+{% extends 'base.html' %}
+{% load static %}
+{% block contenido %}
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="index.html">Start Bootstrap</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="#">Home</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href={% url 'home:studentsapp' %}>ESTUDIANTES</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href={% url 'home:administratorapp' %}>ADMINISTRADORES</a></li>
+                        
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="#">SOBRE NOSOSTROS</a></li>
 
 
-    <style>
-        a{color:brown;
-            text-align: center; }
-        li{
-            text-align: center; 
-        }
-        h1{
-            text-align: center; 
-        }
-    
-    
-    </style>
-
-</head>
-<body>
+                    </ul>
+                </div>
+            </div>
+        </nav>
         
-
-    <div class ="container" style ="background-color:slategrey">
-        <h1 class="text-center">BIENVENIDOS</h1>
-    </div>
-    <br>
-  
-    <li>
-        <a href={% url 'home:listadoapp' %}>Listado</a>
-        <a href={% url 'home:studentsapp' %}> Estudiantes</a> |
-        <a href={% url 'home:administratorapp' %}>Administradores</a> |
-                  
-    </li>
-
-    <br><br>
-    <p class ="contenido"> Pagina principal para desarrollo web </p> 
-    <p class="text-center">Usando Boostrap </p>
-    <br><br><br>
-    
-
-</body>
-</html>
+        <section class="page-section cta">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-9 mx-auto">
+                        <div class="cta-inner bg-faded text-center rounded">
+                            <h2 class="section-heading mb-4">
+                                <span class="section-heading-upper">Desarrollo Web </span>
+                            </h2>
+                            <p class="mb-0">El desarrollo web nos permite crear y mantener sitios web 
+                                Poder implicar una amplia gama de acciones, como la codificación, diseño hasta 
+                                la gestión de contenidos y la administración del servidor web.</p>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock %}  
