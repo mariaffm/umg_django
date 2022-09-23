@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
+from revista.views import CrearArticulosView
 
 # Create your views here.
 
@@ -14,6 +15,9 @@ class StudentsView(TemplateView):
     
 class AdministratorView(TemplateView):
     template_name='administrator.html'
+
+class CrearArticulosView(TemplateView):
+    template_name='crearArticulo.html'
     
     
 

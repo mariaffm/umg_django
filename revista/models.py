@@ -8,8 +8,8 @@ class Publicaciones(models.Model):
       creacion =models.DateTimeField(auto_now_add=True)
       
 
-def __str__(self):
-        return '%s %s' % (self.nombre, self.tipoNoticia )
+      def __str__(self):
+            return '%s, %s' % (self.nombre, self.tipoNoticia )
 
 class Meta:
       ordering = ['nombre']
@@ -26,8 +26,8 @@ class Autorizaciones(models.Model):
       creacion =models.DateTimeField(auto_now_add=True)
       
 
-def __str__(self):
-        return '%s'% (self.nombre)
+      def __str__(self):
+            return '%s'% (self.nombre)
 
 class Meta:
       ordering = ['nombre']
@@ -56,8 +56,8 @@ class Articulos(models.Model):
       creacion =models.DateTimeField(auto_now_add=True)
       
 
-def __str__(self):
-        return '%s'% (self.nombre)
+      def __str__(self):
+            return '%s'% (self.titulo)
 
 
 
@@ -67,5 +67,28 @@ class Comentarios(models.Model):
       creacion =models.DateTimeField(auto_now_add=True)
       
 
-def __str__(self):
-        return '%s'% (self.nombre)
+      def __str__(self):
+            return '%s'% (self.descripcion)
+
+
+#***********************
+##ADD NEW CONTENT
+class Estududiantes(models.Model):
+      nombre =models.CharField(blank = True,max_length=100, verbose_name = 'Nombre')
+      direccion = models.CharField(blank = True,max_length=100, verbose_name = 'direccion')
+      carne = models.CharField(blank = True,max_length=100, verbose_name = 'carne')
+      creacion =models.DateTimeField(auto_now_add=True)
+      
+
+      def __str__(self):
+            return '%s'% (self.nombre)
+
+class Administradores(models.Model):
+      nombre =models.CharField(blank = True,max_length=100, verbose_name = 'Nombre')
+      direccion = models.CharField(blank = True,max_length=100, verbose_name = 'direccion')
+      cargo = models.CharField(blank = True,max_length=100, verbose_name = 'cargo')
+      creacion =models.DateTimeField(auto_now_add=True)
+      
+
+      def __str__(self):
+            return '%s'% (self.nombre)            
