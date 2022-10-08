@@ -7,4 +7,3 @@ class ArticuloForm(forms.ModelForm):
         model= Articulos
         fields = '__all__'
 
-       

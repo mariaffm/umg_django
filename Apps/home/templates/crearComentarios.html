@@ -10,14 +10,11 @@
         <div class="row">
             <div class="col-xl-9 mx-auto">
                 <div class="cta-inner bg-faded text-center rounded">
-                    <h1>ARTICULOS</h1>
+                    <h1>COMENTARIOS</h1>
                     <form method="POST">
                         {% csrf_token %}
-                        Titulo  {{form.titulo}}
-                        Fecha_creacion {{form.fecha_creacion}}
-                        Descripcion {{form.descripcion}}
-                        Tipo {{ form.tipo   }}
-                        Publicaciones {{form.publicaciones}}        
+                        Descripcion  {{form.descripcion}}
+                        Articulos {{form.Articulos}}
                         <input type="submit" name="Guardar">
                     </form>
                     
@@ -29,7 +26,7 @@
 
 {% endblock %}
 
-<!--    
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,18 +36,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>ARTICULOS</h1>
+    <h1>COMENTARIOS</h1>
     <form method="POST">
         {% csrf_token %}
-        Titulo  {{form.titulo}}
-        Fecha_creacion {{form.fecha_creacion}}
-        Descripcion {{form.descripcion}}
-        Tipo {{ form.tipo   }}
-        Publicaciones {{form.publicaciones}}        
+        Descripcion  {{form.descripcion}}
+        Articulos {{form.Articulos}}
         <input type="submit" name="Guardar">
     </form>
-    
+
 </body>
 </html>
-
 -->

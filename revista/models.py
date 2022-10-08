@@ -1,4 +1,9 @@
+from time import perf_counter
 from django.db import models
+from django.dispatch import receiver
+from django.contrib.auth.models import User
+from django.dispatch import receiver
+from django.db.models.signals import post_save
 
 # Create your models here.
 class Publicaciones(models.Model):
@@ -92,3 +97,19 @@ class Administradores(models.Model):
 
       def __str__(self):
             return '%s'% (self.nombre)            
+
+
+class Usuario(models.Model):
+      perfil =models.OneToOneField(User,on_delete=models.CASCADE)
+      
+      def __str__(self):
+            return self.perfil.username
+
+@receiver(post_save,sender=User)
+def crear_usuario(sender, instance,created, **Kwargs):
+      if created:
+            Usuario.objects.create(perfil=instance)
+
+@receiver(post_save,sender=User)
+def guardar_usuario(sender, instance,created, **Kwargs):
+     instance.usuario.save()
