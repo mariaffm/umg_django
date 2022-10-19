@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}   
+{% block contenido %}
+
+<section class="page-section cta">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 mx-auto">
+                <div class="cta-inner bg-faded text-center rounded">
+                    
+                        <h2>Listado Publicaciones</h2>
+                        <a href="{% url 'home:crearPublicacion' %}">Crear Publicacion</a> 
+                        <a href="{% url 'home:homeapp' %}">Home</a> 
+                        <center>
+                            <TABLE BORDER WIDTH="50%">
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Apellido</td>
+                                    <td>Tipo Noticia</td>
+                                </tr>
+                                {% for publ in object_list %}
+                                <tr>
+                                    <td>{{publ.nombre}}</td>
+                                    <td>{{publ.apellido}}</td>
+                                    <td>{{publ.tipoNoticia}}</td>
+                                </tr>
+                                {% endfor %}
+                        </center>
+                       
+                </div>
+            </div>
+        </div>
+    </div>
+</section>    
+{% endblock %}

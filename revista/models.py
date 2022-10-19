@@ -113,3 +113,4 @@ def crear_usuario(sender, instance,created, **Kwargs):
 @receiver(post_save,sender=User)
 def guardar_usuario(sender, instance,created, **Kwargs):
      instance.usuario.save()
+     

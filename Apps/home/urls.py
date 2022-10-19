@@ -21,7 +21,8 @@ from django.urls import path,include
 from Apps.home import views
 from revista.views import CrearArticulosView, principalView
 from .views import CrearAdministradorView, CrearPublicacionView, HomeView, ListadoView, StudentsView, AdministratorView, CrearArticulosView, CrearEstudianteView,CrearPublicacionView
-from .views import CrearAutorizacionesView, CrearComentariosView, RegistroView, LoginView
+from .views import CrearAutorizacionesView, CrearComentariosView, RegistroView, LoginView, ListarEstudianteView,ListarAdministradoresView,ListarPublicacionesView,ListarAutorizacionesView
+from .views import ListarArticulosView,ListarComentariosView
 app_name ='home'
 
 urlpatterns = [
@@ -37,6 +38,12 @@ urlpatterns = [
     path('crearAutorizaciones/',CrearAutorizacionesView.as_view(), name= 'crearAutorizaciones'),
     path('crearComentarios/',CrearComentariosView.as_view(), name= 'crearComentarios'),
     path('registro/',RegistroView.as_view(), name= 'registro'),
-     path('login/',LoginView.as_view(), name= 'login')
-    
+    path('login/',LoginView.as_view(), name= 'login'),
+    path('listado_estudiante/',ListarEstudianteView.as_view(), name= 'listadoest'),  
+    path('listado_administrador/',ListarAdministradoresView.as_view(), name= 'listadoadm'),
+    path('listado_publicaciones/',ListarPublicacionesView.as_view(), name= 'listadopubl'),
+    path('listado_autorizaciones/',ListarAutorizacionesView.as_view(), name= 'listadoaut'),
+    path('listado_articulos/', ListarArticulosView.as_view(), name= 'listadoart'),
+    path('listado_comentarios/',ListarComentariosView.as_view(), name= 'listadocom'),
+
 ]

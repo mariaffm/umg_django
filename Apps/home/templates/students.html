@@ -9,8 +9,8 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase"  href="{% url 'home:homeapp' %}">Home</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href={% url 'home:studentsapp' %}>ESTUDIANTES</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href={% url 'home:administratorapp' %}>ADMINISTRADORES</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href={% url 'home:listadoest' %}>ESTUDIANTES</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href={% url 'home:listadoadm' %}>ADMINISTRADORES</a></li>
                         
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="#">SOBRE NOSOTROS</a></li>
 
@@ -29,7 +29,7 @@
                                 <span class="section-heading-upper">LISTADO DE ESTUDIATES</span>
                                 <h2>Ingresar Estudiante</h2>
                                     <a href="{% url 'home:crearEstudiante' %}">Crear Estudiante</a>
-                                
+                                  
                                     <center>
                                         <TABLE BORDER WIDTH="50%">
                                             <tr>
@@ -43,27 +43,7 @@
                                                 <td>Fernanda</td>
                                                 <td>Fuentes</td>
                                                 <td>Guatemala</td>
-                                            </tr>
-                                            <tr >
-                                                <td>2</td>
-                                                <td>Angelina</td>
-                                                <td>Borbon</td>
-                                                <td>España</td>
-                                            </tr>
-                                            <tr class = "table-success">
-                                                <td>3</td>
-                                                <td>Marcos</td>
-                                                <td>Miranda</td>
-                                                <td>Mexico</td>
-                                            </tr>
-                                    
-                                            <tr class=" fila" >
-                                                <td class="fila1">4</td>
-                                                <td class="fila2" >David</td>
-                                                <td>Juarez</td>
-                                                <td>Chile</td>
-                                            </tr>
-                                    
+                                            </tr>                                   
                                         </table>
                                     </center>                                  
                         </div>

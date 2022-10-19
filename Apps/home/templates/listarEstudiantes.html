@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}   
 {% block contenido %}
-
         <!-- Navigation-->
+
         <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
             <div class="container">
                 <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="index.html">Start Bootstrap</a>
@@ -11,44 +11,44 @@
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase"  href="{% url 'home:homeapp' %}">Home</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href={% url 'home:listadoest' %}>ESTUDIANTES</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href={% url 'home:listadoadm' %}>ADMINISTRADORES</a></li>                   
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href={% url 'home:listadoadm' %}>ADMINISTRADORES</a></li>
+                        
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="#">SOBRE NOSOTROS</a></li>
+
+
                     </ul>
                 </div>
             </div>
         </nav>
-        
+
         <section class="page-section cta">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-9 mx-auto">
                         <div class="cta-inner bg-faded text-center rounded">
                             
-                                <span class="section-heading-upper">LISTADO DE ADMINISTRADORESS</span>
-                               
-                                
+                                <h2>Listado Estudiante</h2>
+                                <a href="{% url 'home:crearEstudiante' %}">Crear Estudiante</a> 
                                 <center>
-                                    <a href="{% url 'home:crearAdministrador' %}">Crear Administrador</a>
-                                    
                                     <TABLE BORDER WIDTH="50%">
                                         <tr>
-                                            <th>Numero</th>
-                                            <th>Nombre</th>
-                                            <th>Apellido</th>
-                                            <th>Carrera</th>
+                                            <td>Nombre</td>
+                                            <td>Direccion</td>
+                                            <td>Cargo</td>
                                         </tr>
-                                        <tr class="table-primary" >
-                                            <td>1</td>
-                                            <td>Fernanda</td>
-                                            <td>Fuentes</td>
-                                            <td>Ingenieria Quimica</td>
+                                        {% for est in object_list %}
+                                        <tr>
+                                            <td>{{est.nombre}}</td>
+                                            <td>{{est.direccion}}</td>
+                                            <td>{{est.carne}}</td>
+                                            
                                         </tr>
-                                
-                                    </table>
-                                </center>                                                                                                      
+                                        {% endfor %}
+                                </center>
+                               
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </section>    
 {% endblock %}

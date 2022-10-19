@@ -11,6 +11,9 @@
             <div class="col-xl-9 mx-auto">
                 <div class="cta-inner bg-faded text-center rounded">
                     <h1>PUBLICACION</h1>
+
+                    <a href="{% url 'home:listadopubl' %}">Listado Publicacion</a> 
+                   
                     <form method="POST">
                         {% csrf_token %}
                         Nombre  {{form.nombre}}
