@@ -8,6 +8,11 @@
             <div class="col-xl-9 mx-auto">
                 <div class="cta-inner bg-faded text-center rounded">
                     
+                    <form action="" method="get">
+                        <input type="text" name="tipoNoticia" value ="{{request.GET.tipoNoticia}}">
+                        <button type="submit">Buscar</button>
+                    </form>
+
                         <h2>Listado Publicaciones</h2>
                         <a href="{% url 'home:crearPublicacion' %}">Crear Publicacion</a> 
                         <a href="{% url 'home:homeapp' %}">Home</a> 
@@ -17,12 +22,14 @@
                                     <td>Nombre</td>
                                     <td>Apellido</td>
                                     <td>Tipo Noticia</td>
+                                    <td>Acciones</td>
                                 </tr>
                                 {% for publ in object_list %}
                                 <tr>
                                     <td>{{publ.nombre}}</td>
                                     <td>{{publ.apellido}}</td>
                                     <td>{{publ.tipoNoticia}}</td>
+                                    <td><a href="{% url 'home:editarpubl' publ.id %}">Editar</a></td>
                                 </tr>
                                 {% endfor %}
                         </center>

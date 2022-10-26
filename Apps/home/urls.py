@@ -22,7 +22,7 @@ from Apps.home import views
 from revista.views import CrearArticulosView, principalView
 from .views import CrearAdministradorView, CrearPublicacionView, HomeView, ListadoView, StudentsView, AdministratorView, CrearArticulosView, CrearEstudianteView,CrearPublicacionView
 from .views import CrearAutorizacionesView, CrearComentariosView, RegistroView, LoginView, ListarEstudianteView,ListarAdministradoresView,ListarPublicacionesView,ListarAutorizacionesView
-from .views import ListarArticulosView,ListarComentariosView
+from .views import ListarArticulosView,ListarComentariosView,EditarEstudianteView, EditarAdministradorView, EditarPublicacionView, EditarAutorizacionesView, EditarComentariosView,EditarArticulosView
 app_name ='home'
 
 urlpatterns = [
@@ -45,5 +45,12 @@ urlpatterns = [
     path('listado_autorizaciones/',ListarAutorizacionesView.as_view(), name= 'listadoaut'),
     path('listado_articulos/', ListarArticulosView.as_view(), name= 'listadoart'),
     path('listado_comentarios/',ListarComentariosView.as_view(), name= 'listadocom'),
+    path('editar_estudiante/<int:pk>',EditarEstudianteView.as_view(), name= 'editarest'),
+    path('editar_administrador/<int:pk>',EditarAdministradorView.as_view(), name= 'editaradm'),
+    path('editar_publicaciones/<int:pk>',EditarPublicacionView.as_view(), name= 'editarpubl'),
+    path('editar_autorizaciones/<int:pk>',EditarAutorizacionesView.as_view(), name= 'editaraut'),
+    path('editar_articulos/<int:pk>', EditarArticulosView.as_view(), name= 'editarart'),
+    path('editar_comentarios/<int:pk>',EditarComentariosView.as_view(), name= 'editarcom'),
+    
 
 ]

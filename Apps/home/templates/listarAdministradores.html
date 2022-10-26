@@ -26,21 +26,27 @@
                 <div class="row">
                     <div class="col-xl-9 mx-auto">
                         <div class="cta-inner bg-faded text-center rounded">
-                            
+                            <form action="" method = "get">
+                                <input type="text" name = "cargo" value ="{{request.GET.cargo}}">
+                                <button type = "submit">Buscar</button>
+                            </form>
+
                                 <h2>Listado Administradores</h2>
                                 <a href="{% url 'home:crearAdministrador' %}">Crear Administrador</a> 
                                 <center>
                                     <TABLE BORDER WIDTH="50%">
                                         <tr>
-                                            <td>Numero</td>
                                             <td>Nombre</td>
-                                            <td>Carne</td>
+                                            <td>Direccion</td>
+                                            <td>Cargo</td>
+                                            <td>Acciones</td>
                                         </tr>
                                         {% for adm in object_list %}
                                         <tr>
                                             <td>{{adm.nombre}}</td>
                                             <td>{{adm.direccion}}</td>
                                             <td>{{adm.cargo}}</td>
+                                            <td><a href="{% url 'home:editaradm' adm.id %}">Editar</a></td>
                                         </tr>
                                         {% endfor %}
                                 </center>

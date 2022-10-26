@@ -26,7 +26,12 @@
                 <div class="row">
                     <div class="col-xl-9 mx-auto">
                         <div class="cta-inner bg-faded text-center rounded">
-                            
+
+                                <form action="" method ="get">
+                                    <input type="text" name ="nombre" value ="{{ request.GET.nombre}}">
+                                    <button type ="submit">Buscar</button>
+                                </form>
+
                                 <h2>Listado Estudiante</h2>
                                 <a href="{% url 'home:crearEstudiante' %}">Crear Estudiante</a> 
                                 <center>
@@ -34,17 +39,18 @@
                                         <tr>
                                             <td>Nombre</td>
                                             <td>Direccion</td>
-                                            <td>Cargo</td>
-                                        </tr>
+                                            <td>Carne</td>
+                                            <td>acciones</td>
+                                        </tr>   
                                         {% for est in object_list %}
                                         <tr>
                                             <td>{{est.nombre}}</td>
                                             <td>{{est.direccion}}</td>
                                             <td>{{est.carne}}</td>
-                                            
+                                            <td><a href="{% url 'home:editarest' est.id %}">Editar</a></td>
                                         </tr>
                                         {% endfor %}
-                                </center>
+                                </center>   
                                
                         </div>
                     </div>

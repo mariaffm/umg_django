@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}   
+{% block contenido %}
+
+<h1>ADMINISTRADORES</h1>
+
+
+<section class="page-section cta">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 mx-auto">
+                <div class="cta-inner bg-faded text-center rounded">
+                    <a href="{% url 'home:listadoadm' %}">Listar Administrador</a> 
+                    <form method="POST">
+                        <h1>ADITAR DMINISTRADORES</h1>
+                        {% csrf_token %}
+                        Nombre  {{form.nombre}}
+                        Direccion {{form.direccion}}
+                        cargo {{form.cargo}}
+                        <input type="submit" name="Guardar">
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

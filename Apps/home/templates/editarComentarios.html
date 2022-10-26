@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}   
+{% block contenido %}
+
+<section class="page-section cta">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 mx-auto">
+                <div class="cta-inner bg-faded text-center rounded">
+                    <h1>COMENTARIOS</h1>
+                    <a href="{% url 'home:listadocom' %}">Listado</a> 
+                    <a href="{% url 'home:homeapp' %}">Home</a> 
+                    <form method="POST">
+                        {% csrf_token %}
+                        Descripcion  {{form.descripcion}}
+                        Articulos {{form.Articulos}}
+                        <input type="submit" name="Guardar">
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
